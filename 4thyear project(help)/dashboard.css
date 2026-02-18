@@ -1,0 +1,133 @@
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: #000;
+}
+
+/* =========================
+   CONTAINER + BACKGROUND
+========================= */
+.container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;hi 
+  padding: 40px 0;
+
+  background:
+    linear-gradient(rgba(0,0,0,0.85), rgba(0,0,0,0.85)),
+    url("image/background.png") center/cover no-repeat;
+}
+
+/* =========================
+   DASHBOARD GRID LAYOUT
+========================= */
+.dashboard {
+  display: grid;
+  grid-template-columns: 1fr 1.3fr;
+  grid-template-rows: auto auto auto;
+  gap: 30px;
+  width: 85%;
+  max-width: 1200px;
+}
+
+/* Grid Positioning */
+.achievements { grid-column: 1; grid-row: 1; }
+.xp           { grid-column: 1; grid-row: 2; }
+.leaderboard  { grid-column: 1; grid-row: 3; }
+
+.missions     { grid-column: 2; grid-row: 1 / span 2; }
+.crisis-map   { grid-column: 2; grid-row: 3; }
+
+/* =========================
+   CARD STYLING
+========================= */
+.card {
+  background: #1f9ca8;
+  padding: 24px;
+  border-radius: 16px;
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+.card h3 {
+  font-size: 18px;
+  font-weight: 600;
+}
+
+/* =========================
+   INNER DARK BOXES
+========================= */
+.inner-box {
+  background: #254c52;
+  border-radius: 12px;
+}
+
+/* Exact Heights */
+
+/* Achievements */
+.achievements .inner-box { height: 60px; }
+
+/* XP Points */
+.xp .inner-box { height: 60px; }
+
+/* Leaderboard */
+.leaderboard .inner-box { height: 60px; }
+
+/* Active Missions */
+.missions .inner-box { height: 65px; }
+
+/* Crisis Map */
+.crisis-map {
+  position: relative;
+}
+
+.crisis-map .inner-box {
+  height: 205px;
+}
+
+/* =========================
+   VIEW MAP BUTTON
+========================= */
+.map-btn {
+  position: absolute;
+  bottom: 45px;
+  right: 31px;
+  padding: 8px 20px;
+  border-radius: 25px;
+  border: none;
+  background: #18f0ff;
+  color: #04191f;
+  font-weight: 700;
+  font-size: 10px;
+  cursor: pointer;
+}
+
+.map-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 0 15px #18f0ff;
+}
+
+/* =========================
+   RESPONSIVE
+========================= */
+@media (max-width: 900px) {
+  .dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .missions,
+  .crisis-map {
+    grid-column: auto;
+    grid-row: auto;
+  }
+}

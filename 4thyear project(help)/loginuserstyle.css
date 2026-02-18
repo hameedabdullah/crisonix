@@ -1,0 +1,272 @@
+/* --- 1. RESET --- */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Segoe UI", system-ui, sans-serif;
+}
+
+body {
+  height: 100vh;
+  background: #000;
+  overflow: hidden;
+ 
+}
+
+/* Smooth transitions */
+button,
+input,
+.login-card,
+.logo,
+.signup span,
+.help {
+  transition: all 0.3s ease;
+}
+
+/* --- 2. LAYOUT --- */
+.container {
+  height: 100vh;
+  display: flex;
+  background:
+    linear-gradient(rgba(0,0,0,0.8), rgba(0,0,0,0.8)),
+    url("image/background.png") center/cover no-repeat;
+  
+}
+
+/* --- 3. LEFT SIDE --- */
+.left {
+  flex: 1;
+  color: white;
+  padding: 60px;
+  display: flex;
+  flex-direction: column;
+  align-items: center; 
+  gap: 100px;
+}
+
+.logo {
+  font-family: "Jersey 15", sans-serif;
+  font-size: 80px;
+  font-weight: 400;
+  padding-top: 40px;
+  text-align: center;
+}
+
+/* Logo hover */
+.logo:hover {
+  transform: scale(1.05);
+  color: #00e6ff;
+  text-shadow: 0 0 20px #00e6ff;
+}
+
+.tagline {
+  font-size: 67px;
+  font-weight: 300;
+  line-height: 1.2;
+  padding-left: 20px;
+  width: 100%;
+}
+
+.tagline span {
+  color: #00e6ff;
+  font-weight: 500;
+}
+
+
+/* --- 4. RIGHT SIDE --- */
+.right {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+/* --- 5. LOGIN CARD --- */
+.login-card {
+  width: 545px;
+  padding: 75px;
+  border-radius: 16px;
+  background: linear-gradient(135deg, #067b8d, #0ba5b8);
+  box-shadow: 0 0 50px rgba(0,255,255,0.2);
+  text-align: center;
+  color: white;
+}
+
+/* Card hover lift */
+.login-card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 0 70px rgba(0,255,255,0.4);
+}
+
+.login-card h2 { margin-bottom: 8px; }
+
+.sub {
+  font-size: 14px;
+  opacity: 0.9;
+  margin-bottom: 25px;
+}
+
+/* Inputs */
+.login-card input {
+  width: 100%;
+  padding: 14px;
+  margin-bottom: 15px;
+  border-radius: 8px;
+  border: none;
+  background: rgba(0,0,0,0.3);
+  color: white;
+  outline: none;
+  cursor: pointer;
+}
+
+/* Input focus glow */
+.login-card input:focus {
+  background: rgba(0,0,0,0.5);
+  box-shadow: 0 0 10px #00e6ff;
+  transform: scale(1.02);
+}
+
+/* Help hover */
+.help {
+  font-size: 12px;
+  text-align: right;
+  margin-bottom: 20px;
+  opacity: 0.8;
+  cursor: pointer;
+}
+
+.help:hover {
+  color: #00e6ff;
+}
+
+/* Login button */
+.login-btn {
+  width: 100%;
+  padding: 14px;
+  border-radius: 10px;
+  border: none;
+  background: #00e6ff;
+  color: #020b12;
+  font-weight: 700;
+  cursor: pointer;
+  letter-spacing: 1px;
+}
+
+/* Button hover */
+.login-btn:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 0 20px #00e6ff;
+}
+
+.login-btn:active {
+  transform: scale(0.97);
+}
+
+.or { margin: 20px 0; font-size: 13px; opacity: 0.7; }
+
+/* Social buttons */
+.social { display: flex; gap: 12px; }
+
+.social button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  font-weight: 600;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+/* Google hover */
+.google {
+  background: white;
+}
+
+.google:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(255,255,255,0.4);
+}
+
+/* Apple hover */
+.apple {
+  background: black;
+  color: white;
+}
+
+.apple:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 5px 15px rgba(0,0,0,0.6);
+}
+
+.social button:active {
+  transform: scale(0.96);
+}
+
+.signup { margin-top: 25px; font-size: 14px; }
+
+.signup span {
+  color: #00e6ff;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+/* Signup hover */
+.signup span:hover {
+  text-decoration: underline;
+  text-shadow: 0 0 10px #00e6ff;
+}
+
+/* Mobile logo hidden on desktop */
+.mobile-logo {
+  display: none;
+  font-family: "Jersey 15", sans-serif;
+  color: black;
+  letter-spacing: 2px;
+}
+
+/* =============================== */
+/* 📱 MOBILE FIX ONLY */
+/* =============================== */
+
+@media (max-width: 900px) {
+
+  body {
+    overflow: auto;
+  }
+
+  .container {
+    flex-direction: column;
+    height: 100vh;
+  }
+
+  .left {
+    display: none;
+  }
+
+  .right {
+    width: 100%;
+    height: 100vh;
+  }
+
+  .login-card {
+    width: 90%;
+    padding: 40px 25px;
+  }
+
+  .mobile-logo {
+    display: block;
+    font-size: 40px;
+    margin-bottom: 20px;
+  }
+
+  .tagline {
+    display: none;
+  }
+
+  .social {
+    flex-direction: column;
+  }
+}
